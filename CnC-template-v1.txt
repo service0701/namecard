@@ -4,9 +4,9 @@ function get(key) {
 }
 
 const primary = get('primary_color') || '#C97F7F'
-const secondary = get('secondary_color') || '#EBCBCB'
-const mobileLink = get('mobile').replace(/-/g, '')
-const telLink = get('tel').replace(/-/g, '')
+const secondary = get('secondary_color') || '#E8C7C7'
+const mobileLink = get('mobile').replace(/-/g, '').replace(/\s/g, '')
+const telLink = get('tel').replace(/-/g, '').replace(/\s/g, '')
 const ext = get('est') ? ' ext. ' + get('est') : ''
 %>
 {
@@ -20,14 +20,17 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
   "body": {
     "type": "box",
     "layout": "vertical",
-    "paddingAll": "26px",
-    "spacing": "md",
+    "paddingTop": "24px",
+    "paddingBottom": "0px",
+    "paddingStart": "26px",
+    "paddingEnd": "26px",
+    "spacing": "sm",
     "contents": [
       {
         "type": "text",
         "text": "<%= get('cname') %>",
         "weight": "bold",
-        "size": "xxl",
+        "size": "lg",
         "color": "#111111"
       },
       {
@@ -36,20 +39,20 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
         "weight": "bold",
         "size": "xl",
         "color": "<%= primary %>",
-        "margin": "xs"
+        "margin": "sm"
       },
       {
         "type": "text",
         "text": "<%= get('title') %>｜<%= get('etitle') %>",
         "size": "md",
-        "color": "#333333",
+        "color": "#222222",
         "margin": "sm"
       },
       {
         "type": "box",
         "layout": "horizontal",
-        "margin": "xl",
         "height": "3px",
+        "margin": "lg",
         "contents": [
           {
             "type": "box",
@@ -62,7 +65,7 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
             "type": "box",
             "layout": "vertical",
             "flex": 8,
-            "backgroundColor": "#EFEFEF",
+            "backgroundColor": "#EEEEEE",
             "contents": []
           }
         ]
@@ -70,26 +73,26 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
       {
         "type": "box",
         "layout": "vertical",
-        "spacing": "md",
-        "margin": "xl",
+        "spacing": "sm",
+        "margin": "lg",
         "contents": [
           {
             "type": "box",
             "layout": "horizontal",
-            "spacing": "md",
+            "spacing": "sm",
             "contents": [
               {
                 "type": "text",
                 "text": "📱",
-                "size": "lg",
+                "size": "md",
                 "flex": 1
               },
               {
                 "type": "text",
                 "text": "<%= get('mobile') %>",
-                "size": "md",
+                "size": "sm",
                 "weight": "bold",
-                "color": "#222222",
+                "color": "#111111",
                 "flex": 8,
                 "action": {
                   "type": "uri",
@@ -100,25 +103,25 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
           },
           {
             "type": "separator",
-            "color": "#EEEEEE"
+            "color": "#F0F0F0"
           },
           {
             "type": "box",
             "layout": "horizontal",
-            "spacing": "md",
+            "spacing": "sm",
             "contents": [
               {
                 "type": "text",
                 "text": "☎️",
-                "size": "lg",
+                "size": "md",
                 "flex": 1
               },
               {
                 "type": "text",
                 "text": "<%= get('tel') %><%= ext %>",
-                "size": "md",
+                "size": "sm",
                 "weight": "bold",
-                "color": "#222222",
+                "color": "#111111",
                 "flex": 8,
                 "action": {
                   "type": "uri",
@@ -129,25 +132,25 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
           },
           {
             "type": "separator",
-            "color": "#EEEEEE"
+            "color": "#F0F0F0"
           },
           {
             "type": "box",
             "layout": "horizontal",
-            "spacing": "md",
+            "spacing": "sm",
             "contents": [
               {
                 "type": "text",
                 "text": "✉️",
-                "size": "lg",
+                "size": "md",
                 "flex": 1
               },
               {
                 "type": "text",
                 "text": "<%= get('email') %>",
-                "size": "md",
+                "size": "sm",
                 "weight": "bold",
-                "color": "#222222",
+                "color": "#111111",
                 "wrap": true,
                 "flex": 8,
                 "action": {
@@ -159,17 +162,17 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
           },
           {
             "type": "separator",
-            "color": "#EEEEEE"
+            "color": "#F0F0F0"
           },
           {
             "type": "box",
             "layout": "horizontal",
-            "spacing": "md",
+            "spacing": "sm",
             "contents": [
               {
                 "type": "text",
                 "text": "📍",
-                "size": "lg",
+                "size": "md",
                 "flex": 1
               },
               {
@@ -180,9 +183,9 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
                   {
                     "type": "text",
                     "text": "<%= get('address_tw') %>",
-                    "size": "sm",
+                    "size": "xs",
                     "weight": "bold",
-                    "color": "#222222",
+                    "color": "#111111",
                     "wrap": true,
                     "action": {
                       "type": "uri",
@@ -192,8 +195,8 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
                   {
                     "type": "text",
                     "text": "<%= get('address_en') %>",
-                    "size": "xs",
-                    "color": "#666666",
+                    "size": "xxs",
+                    "color": "#555555",
                     "wrap": true,
                     "margin": "xs",
                     "action": {
@@ -207,25 +210,25 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
           },
           {
             "type": "separator",
-            "color": "#EEEEEE"
+            "color": "#F0F0F0"
           },
           {
             "type": "box",
             "layout": "horizontal",
-            "spacing": "md",
+            "spacing": "sm",
             "contents": [
               {
                 "type": "text",
                 "text": "🌐",
-                "size": "lg",
+                "size": "md",
                 "flex": 1
               },
               {
                 "type": "text",
                 "text": "<%= get('website') %>",
-                "size": "md",
+                "size": "sm",
                 "weight": "bold",
-                "color": "#222222",
+                "color": "#111111",
                 "wrap": true,
                 "flex": 8,
                 "action": {
@@ -241,7 +244,8 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
         "type": "box",
         "layout": "horizontal",
         "spacing": "md",
-        "margin": "xl",
+        "margin": "lg",
+        "height": "48px",
         "contents": [
           {
             "type": "image",
@@ -268,46 +272,65 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
       },
       {
         "type": "box",
-        "layout": "horizontal",
-        "height": "78px",
-        "margin": "xl",
+        "layout": "vertical",
+        "height": "58px",
+        "margin": "lg",
         "contents": [
           {
             "type": "box",
-            "layout": "vertical",
-            "flex": 5,
-            "backgroundColor": "<%= primary %>",
-            "cornerRadius": "12px",
-            "paddingAll": "12px",
+            "layout": "horizontal",
+            "height": "58px",
             "contents": [
               {
-                "type": "text",
-                "text": "• • • • •",
-                "size": "xs",
-                "color": "#FFFFFF"
+                "type": "box",
+                "layout": "vertical",
+                "flex": 5,
+                "backgroundColor": "<%= primary %>",
+                "cornerRadius": "14px",
+                "paddingAll": "10px",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "• • • •",
+                    "size": "xxs",
+                    "color": "#FFFFFF"
+                  },
+                  {
+                    "type": "text",
+                    "text": "• • • •",
+                    "size": "xxs",
+                    "color": "#FFFFFF"
+                  }
+                ]
               },
               {
-                "type": "text",
-                "text": "• • • • •",
-                "size": "xs",
-                "color": "#FFFFFF"
+                "type": "box",
+                "layout": "vertical",
+                "width": "8px",
+                "contents": []
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "flex": 2,
+                "backgroundColor": "<%= secondary %>",
+                "contents": []
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "width": "8px",
+                "contents": []
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "flex": 4,
+                "backgroundColor": "#F8D94A",
+                "cornerRadius": "14px",
+                "contents": []
               }
             ]
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "flex": 2,
-            "backgroundColor": "<%= secondary %>",
-            "contents": []
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "flex": 4,
-            "backgroundColor": "#F8D94A",
-            "cornerRadius": "12px",
-            "contents": []
           }
         ]
       }
