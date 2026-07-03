@@ -20,8 +20,8 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
   "body": {
     "type": "box",
     "layout": "vertical",
-    "paddingTop": "24px",
-    "paddingBottom": "0px",
+    "paddingTop": "22px",
+    "paddingBottom": "14px",
     "paddingStart": "26px",
     "paddingEnd": "26px",
     "spacing": "sm",
@@ -29,46 +29,27 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
       {
         "type": "text",
         "text": "<%= get('cname') %>",
-        "weight": "bold",
         "size": "lg",
         "color": "#111111"
       },
       {
         "type": "text",
         "text": "<%= get('ename') %>",
-        "weight": "bold",
         "size": "xl",
         "color": "<%= primary %>",
-        "margin": "sm"
+        "margin": "xs"
       },
       {
         "type": "text",
         "text": "<%= get('title') %>｜<%= get('etitle') %>",
         "size": "md",
         "color": "#222222",
-        "margin": "sm"
+        "margin": "xs"
       },
       {
-        "type": "box",
-        "layout": "horizontal",
-        "height": "3px",
+        "type": "separator",
         "margin": "lg",
-        "contents": [
-          {
-            "type": "box",
-            "layout": "vertical",
-            "flex": 2,
-            "backgroundColor": "<%= primary %>",
-            "contents": []
-          },
-          {
-            "type": "box",
-            "layout": "vertical",
-            "flex": 8,
-            "backgroundColor": "#EEEEEE",
-            "contents": []
-          }
-        ]
+        "color": "#EEEEEE"
       },
       {
         "type": "box",
@@ -84,14 +65,13 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
               {
                 "type": "text",
                 "text": "📱",
-                "size": "md",
+                "size": "sm",
                 "flex": 1
               },
               {
                 "type": "text",
                 "text": "<%= get('mobile') %>",
                 "size": "sm",
-                "weight": "bold",
                 "color": "#111111",
                 "flex": 8,
                 "action": {
@@ -103,7 +83,7 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
           },
           {
             "type": "separator",
-            "color": "#F0F0F0"
+            "color": "#F2F2F2"
           },
           {
             "type": "box",
@@ -113,14 +93,13 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
               {
                 "type": "text",
                 "text": "☎️",
-                "size": "md",
+                "size": "sm",
                 "flex": 1
               },
               {
                 "type": "text",
                 "text": "<%= get('tel') %><%= ext %>",
                 "size": "sm",
-                "weight": "bold",
                 "color": "#111111",
                 "flex": 8,
                 "action": {
@@ -132,7 +111,7 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
           },
           {
             "type": "separator",
-            "color": "#F0F0F0"
+            "color": "#F2F2F2"
           },
           {
             "type": "box",
@@ -142,14 +121,13 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
               {
                 "type": "text",
                 "text": "✉️",
-                "size": "md",
+                "size": "sm",
                 "flex": 1
               },
               {
                 "type": "text",
                 "text": "<%= get('email') %>",
                 "size": "sm",
-                "weight": "bold",
                 "color": "#111111",
                 "wrap": true,
                 "flex": 8,
@@ -162,7 +140,7 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
           },
           {
             "type": "separator",
-            "color": "#F0F0F0"
+            "color": "#F2F2F2"
           },
           {
             "type": "box",
@@ -172,7 +150,7 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
               {
                 "type": "text",
                 "text": "📍",
-                "size": "md",
+                "size": "sm",
                 "flex": 1
               },
               {
@@ -184,7 +162,6 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
                     "type": "text",
                     "text": "<%= get('address_tw') %>",
                     "size": "xs",
-                    "weight": "bold",
                     "color": "#111111",
                     "wrap": true,
                     "action": {
@@ -210,7 +187,7 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
           },
           {
             "type": "separator",
-            "color": "#F0F0F0"
+            "color": "#F2F2F2"
           },
           {
             "type": "box",
@@ -220,14 +197,13 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
               {
                 "type": "text",
                 "text": "🌐",
-                "size": "md",
+                "size": "sm",
                 "flex": 1
               },
               {
                 "type": "text",
                 "text": "<%= get('website') %>",
                 "size": "sm",
-                "weight": "bold",
                 "color": "#111111",
                 "wrap": true,
                 "flex": 8,
@@ -245,7 +221,7 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
         "layout": "horizontal",
         "spacing": "md",
         "margin": "lg",
-        "height": "48px",
+        "height": "44px",
         "contents": [
           {
             "type": "image",
@@ -272,65 +248,16 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
       },
       {
         "type": "box",
-        "layout": "vertical",
-        "height": "58px",
+        "layout": "horizontal",
         "margin": "lg",
+        "height": "6px",
+        "cornerRadius": "3px",
         "contents": [
           {
             "type": "box",
-            "layout": "horizontal",
-            "height": "58px",
-            "contents": [
-              {
-                "type": "box",
-                "layout": "vertical",
-                "flex": 5,
-                "backgroundColor": "<%= primary %>",
-                "cornerRadius": "14px",
-                "paddingAll": "10px",
-                "contents": [
-                  {
-                    "type": "text",
-                    "text": "• • • •",
-                    "size": "xxs",
-                    "color": "#FFFFFF"
-                  },
-                  {
-                    "type": "text",
-                    "text": "• • • •",
-                    "size": "xxs",
-                    "color": "#FFFFFF"
-                  }
-                ]
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "width": "8px",
-                "contents": []
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "flex": 2,
-                "backgroundColor": "<%= secondary %>",
-                "contents": []
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "width": "8px",
-                "contents": []
-              },
-              {
-                "type": "box",
-                "layout": "vertical",
-                "flex": 4,
-                "backgroundColor": "#F8D94A",
-                "cornerRadius": "14px",
-                "contents": []
-              }
-            ]
+            "layout": "vertical",
+            "backgroundColor": "<%= primary %>",
+            "contents": []
           }
         ]
       }
