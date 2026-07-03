@@ -21,7 +21,7 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
     "type": "box",
     "layout": "vertical",
     "paddingTop": "22px",
-    "paddingBottom": "14px",
+    "paddingBottom": "16px",
     "paddingStart": "26px",
     "paddingEnd": "26px",
     "spacing": "sm",
@@ -47,9 +47,26 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
         "margin": "xs"
       },
       {
-        "type": "separator",
+        "type": "box",
+        "layout": "horizontal",
+        "height": "6px",
         "margin": "lg",
-        "color": "#EEEEEE"
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 3,
+            "backgroundColor": "<%= primary %>",
+            "contents": []
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 7,
+            "backgroundColor": "#EEEEEE",
+            "contents": []
+          }
+        ]
       },
       {
         "type": "box",
@@ -219,28 +236,28 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
       {
         "type": "box",
         "layout": "horizontal",
-        "spacing": "md",
-        "margin": "lg",
-        "height": "44px",
+        "spacing": "lg",
+        "margin": "xl",
+        "height": "64px",
         "contents": [
           {
             "type": "image",
             "url": "<%= get('cospace_logo') %>",
-            "size": "sm",
+            "size": "md",
             "aspectMode": "fit",
             "flex": 1
           },
           {
             "type": "image",
             "url": "<%= get('tsia_logo') %>",
-            "size": "sm",
+            "size": "md",
             "aspectMode": "fit",
             "flex": 1
           },
           {
             "type": "image",
             "url": "<%= get('cnc_logo') %>",
-            "size": "sm",
+            "size": "md",
             "aspectMode": "fit",
             "flex": 1
           }
@@ -249,9 +266,9 @@ const ext = get('est') ? ' ext. ' + get('est') : ''
       {
         "type": "box",
         "layout": "horizontal",
-        "margin": "lg",
-        "height": "6px",
-        "cornerRadius": "3px",
+        "margin": "md",
+        "height": "7px",
+        "cornerRadius": "4px",
         "contents": [
           {
             "type": "box",
