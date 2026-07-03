@@ -5,8 +5,9 @@ function get(key) {
 
 const primary = get('primary_color') || '#C97F7F'
 const secondary = get('secondary_color') || '#EBCBCB'
-const mobile = get('mobile').replace(/-/g, '')
-const tel = get('tel').replace(/-/g, '')
+const mobileLink = get('mobile').replace(/-/g, '')
+const telLink = get('tel').replace(/-/g, '')
+const ext = get('est') ? ' ext. ' + get('est') : ''
 %>
 {
   "type": "bubble",
@@ -14,113 +15,225 @@ const tel = get('tel').replace(/-/g, '')
   "styles": {
     "body": {
       "backgroundColor": "#FFFFFF"
-    },
-    "footer": {
-      "backgroundColor": "#FFFFFF"
     }
   },
   "body": {
     "type": "box",
     "layout": "vertical",
-    "paddingAll": "24px",
+    "paddingAll": "26px",
     "spacing": "md",
     "contents": [
       {
+        "type": "text",
+        "text": "<%= get('cname') %>",
+        "weight": "bold",
+        "size": "xxl",
+        "color": "#111111"
+      },
+      {
+        "type": "text",
+        "text": "<%= get('ename') %>",
+        "weight": "bold",
+        "size": "xl",
+        "color": "<%= primary %>",
+        "margin": "xs"
+      },
+      {
+        "type": "text",
+        "text": "<%= get('title') %>｜<%= get('etitle') %>",
+        "size": "md",
+        "color": "#333333",
+        "margin": "sm"
+      },
+      {
         "type": "box",
         "layout": "horizontal",
-        "spacing": "md",
+        "margin": "xl",
+        "height": "3px",
         "contents": [
           {
-            "type": "image",
-            "url": "<%= get('cnc_logo') %>",
-            "size": "sm",
-            "aspectMode": "fit",
-            "flex": 1
+            "type": "box",
+            "layout": "vertical",
+            "flex": 2,
+            "backgroundColor": "<%= primary %>",
+            "contents": []
           },
           {
             "type": "box",
             "layout": "vertical",
-            "flex": 3,
-            "contents": [
-              {
-                "type": "text",
-                "text": "<%= get('cname') %>",
-                "weight": "bold",
-                "size": "xxl",
-                "color": "#222222"
-              },
-              {
-                "type": "text",
-                "text": "<%= get('ename') %>",
-                "size": "md",
-                "color": "<%= primary %>",
-                "weight": "bold",
-                "margin": "xs"
-              },
-              {
-                "type": "text",
-                "text": "<%= get('title') %>｜<%= get('etitle') %>",
-                "size": "sm",
-                "color": "#666666",
-                "wrap": true,
-                "margin": "sm"
-              }
-            ]
+            "flex": 8,
+            "backgroundColor": "#EFEFEF",
+            "contents": []
           }
         ]
       },
       {
-        "type": "separator",
-        "margin": "lg",
-        "color": "<%= secondary %>"
-      },
-      {
         "type": "box",
         "layout": "vertical",
-        "spacing": "sm",
-        "margin": "lg",
+        "spacing": "md",
+        "margin": "xl",
         "contents": [
           {
-            "type": "text",
-            "text": "📱 <%= get('mobile') %>",
-            "size": "sm",
-            "color": "#333333",
-            "action": {
-              "type": "uri",
-              "uri": "tel:<%= mobile %>"
-            }
+            "type": "box",
+            "layout": "horizontal",
+            "spacing": "md",
+            "contents": [
+              {
+                "type": "text",
+                "text": "📱",
+                "size": "lg",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "<%= get('mobile') %>",
+                "size": "md",
+                "weight": "bold",
+                "color": "#222222",
+                "flex": 8,
+                "action": {
+                  "type": "uri",
+                  "uri": "tel:<%= mobileLink %>"
+                }
+              }
+            ]
           },
           {
-            "type": "text",
-            "text": "☎ <%= get('tel') %> ext. <%= get('est') %>",
-            "size": "sm",
-            "color": "#333333",
-            "action": {
-              "type": "uri",
-              "uri": "tel:<%= tel %>"
-            }
+            "type": "separator",
+            "color": "#EEEEEE"
           },
           {
-            "type": "text",
-            "text": "✉ <%= get('email') %>",
-            "size": "sm",
-            "color": "#333333",
-            "wrap": true,
-            "action": {
-              "type": "uri",
-              "uri": "mailto:<%= get('email') %>"
-            }
+            "type": "box",
+            "layout": "horizontal",
+            "spacing": "md",
+            "contents": [
+              {
+                "type": "text",
+                "text": "☎️",
+                "size": "lg",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "<%= get('tel') %><%= ext %>",
+                "size": "md",
+                "weight": "bold",
+                "color": "#222222",
+                "flex": 8,
+                "action": {
+                  "type": "uri",
+                  "uri": "tel:<%= telLink %>"
+                }
+              }
+            ]
           },
           {
-            "type": "text",
-            "text": "📍 <%= get('address_tw') %>",
-            "size": "sm",
-            "color": "#333333",
-            "wrap": true,
-            "action": {
-              "type": "uri",
-              "uri": "<%= get('map') %>"
-            }
+            "type": "separator",
+            "color": "#EEEEEE"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "spacing": "md",
+            "contents": [
+              {
+                "type": "text",
+                "text": "✉️",
+                "size": "lg",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "<%= get('email') %>",
+                "size": "md",
+                "weight": "bold",
+                "color": "#222222",
+                "wrap": true,
+                "flex": 8,
+                "action": {
+                  "type": "uri",
+                  "uri": "mailto:<%= get('email') %>"
+                }
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "color": "#EEEEEE"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "spacing": "md",
+            "contents": [
+              {
+                "type": "text",
+                "text": "📍",
+                "size": "lg",
+                "flex": 1
+              },
+              {
+                "type": "box",
+                "layout": "vertical",
+                "flex": 8,
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "<%= get('address_tw') %>",
+                    "size": "sm",
+                    "weight": "bold",
+                    "color": "#222222",
+                    "wrap": true,
+                    "action": {
+                      "type": "uri",
+                      "uri": "<%= get('map') %>"
+                    }
+                  },
+                  {
+                    "type": "text",
+                    "text": "<%= get('address_en') %>",
+                    "size": "xs",
+                    "color": "#666666",
+                    "wrap": true,
+                    "margin": "xs",
+                    "action": {
+                      "type": "uri",
+                      "uri": "<%= get('map') %>"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "separator",
+            "color": "#EEEEEE"
+          },
+          {
+            "type": "box",
+            "layout": "horizontal",
+            "spacing": "md",
+            "contents": [
+              {
+                "type": "text",
+                "text": "🌐",
+                "size": "lg",
+                "flex": 1
+              },
+              {
+                "type": "text",
+                "text": "<%= get('website') %>",
+                "size": "md",
+                "weight": "bold",
+                "color": "#222222",
+                "wrap": true,
+                "flex": 8,
+                "action": {
+                  "type": "uri",
+                  "uri": "<%= get('website') %>"
+                }
+              }
+            ]
           }
         ]
       },
@@ -133,46 +246,70 @@ const tel = get('tel').replace(/-/g, '')
           {
             "type": "image",
             "url": "<%= get('cospace_logo') %>",
-            "size": "xs",
-            "aspectMode": "fit"
+            "size": "sm",
+            "aspectMode": "fit",
+            "flex": 1
           },
           {
             "type": "image",
             "url": "<%= get('tsia_logo') %>",
-            "size": "xs",
-            "aspectMode": "fit"
+            "size": "sm",
+            "aspectMode": "fit",
+            "flex": 1
+          },
+          {
+            "type": "image",
+            "url": "<%= get('cnc_logo') %>",
+            "size": "sm",
+            "aspectMode": "fit",
+            "flex": 1
           }
         ]
-      }
-    ]
-  },
-  "footer": {
-    "type": "box",
-    "layout": "vertical",
-    "spacing": "sm",
-    "paddingAll": "20px",
-    "contents": [
-      {
-        "type": "button",
-        "style": "primary",
-        "height": "sm",
-        "color": "<%= primary %>",
-        "action": {
-          "type": "uri",
-          "label": "前往官網",
-          "uri": "<%= get('website') %>"
-        }
       },
       {
-        "type": "button",
-        "style": "secondary",
-        "height": "sm",
-        "color": "<%= secondary %>",
-        "action": {
-          "type": "uri",
-          "label": "Google Map",
-          "uri": "<%= get('map') %>"
-        }
+        "type": "box",
+        "layout": "horizontal",
+        "height": "78px",
+        "margin": "xl",
+        "contents": [
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 5,
+            "backgroundColor": "<%= primary %>",
+            "cornerRadius": "12px",
+            "paddingAll": "12px",
+            "contents": [
+              {
+                "type": "text",
+                "text": "• • • • •",
+                "size": "xs",
+                "color": "#FFFFFF"
+              },
+              {
+                "type": "text",
+                "text": "• • • • •",
+                "size": "xs",
+                "color": "#FFFFFF"
+              }
+            ]
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 2,
+            "backgroundColor": "<%= secondary %>",
+            "contents": []
+          },
+          {
+            "type": "box",
+            "layout": "vertical",
+            "flex": 4,
+            "backgroundColor": "#F8D94A",
+            "cornerRadius": "12px",
+            "contents": []
+          }
+        ]
       }
     ]
   }
